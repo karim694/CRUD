@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD SYSTEM</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <section>
+        <div class="container py-3 w-75 mx-auto bg-info mt-2 rounded-3">
+            <h1 class="text-center">CRUD SYSTEM</h1>
+            <div class="form-floating mb-3">
+                <input oninput="validationName()"  type="text" class="form-control" placeholder="" id="productName" >
+                <label for="productName">productName</label>
+                <p id="msgName" class="alert mt-2 alert-danger d-none">please enter Product Name between 4 to 30 charachters </p>
+
+              </div>
+            <div class="form-floating mb-3">
+                <input oninput="validationPrice()"  type="number" class="form-control" placeholder="" id="productPrice" >
+                <label for="productPrice">productPrice</label>
+                <p id="msgPrice" class="alert mt-2 alert-danger d-none">please enter Product Price between 6000 to 60000 </p>
+
+              </div>
+              <div class="form-floating mb-3">
+                <input oninput="validationCategory()" list="cat" type="text" class="form-control" placeholder="" id="productCategory" >
+                <label for="productCategory">productCategory</label>
+                <p id="msgCategory" class="alert mt-2 alert-danger d-none">please enter Product Category foreach (Mobile|TV|Screens|Electronic) </p>
+
+<datalist id="cat">
+    <option value="TV"></option>
+    <option value="Mobile"></option>
+    <option value="Screens"></option>
+    <option value="Electronic"></option>
+</datalist>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea oninput="validationDescription()" style="height: 100px;" class="form-control" placeholder="Leave a comment here" id="productDescription"></textarea>
+                <label for="productDescription">productDescription</label>
+                <p id="msgDescription" class="alert mt-2 alert-danger d-none">please enter Product Description between 0 to 250 charachters </p>
+
+              </div>
+              <div class="form-floating mb-3">
+                <input onchange="validationImage()"  type="file" class="form-control" placeholder="" id="productImage" >
+                <label for="productImage">productImage</label>
+
+              </div>
+              <button class="btn btn-primary btn-sm" id="btnAdd">Add Product</button>
+              <button onclick="updateProduct()" class="btn btn-success d-none btn-sm" id="btnUpdate">Update Product</button>
+
+
+        </div>
+       
+    </section>
+    <section class="mt-3">
+        <div class="container-fluid">
+            <input oninput="searchData()"  id="searchInput" type="search" class="form-control w-50 mx-auto" placeholder="Search by Name...">
+<div class="row g-4 mt-2" id="rowData">
+   
+</div>
+        </div>
+    </section>
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
